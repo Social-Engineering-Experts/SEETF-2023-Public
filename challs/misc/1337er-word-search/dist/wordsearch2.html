@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>1337er Word Search</title>
+<style>
+#grid {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  list-style: none;
+  width: 320px;
+  font-family: monospace;
+}
+li {
+	height: 20px;
+}
+</style>
+</head>
+<body>
+<p>It's a massive word search, but for speed reasons we can only show a 16x16 window at a time. Use the arrow keys to move around.</p>
+<ul id="grid" align="center"></ul>
+<script>
+let x = 3141592653589793n;
+let y = 2718281828459045n;
+
+const get=(x,y,n=1337)=>n?dic[get(x>>1n,y>>1n,n-1)][(y&1n)<<1n|x&1n]:x|y?' ':'0';
+const draw=()=>{
+	let s = '';
+	for (let j = 0n; j < 16n; j++)
+		for (let i = 0n; i < 16n; i++)
+			s += `<li>${get(x+i,y+j)}</li>`
+	grid.innerHTML = s;
+};
+
+onkeydown = e => {
+	switch (e.keyCode) {
+		case 37: x--; break;
+		case 38: y--; break;
+		case 39: x++; break;
+		case 40: y++; break;
+		default: return;
+	}
+	draw();
+};
+
+dic={
+'0':'nf0u',
+'1':'hPMX',
+'2':'4Jxl',
+'3':'tcCJ',
+'4':'4nxn',
+'5':'T}Yv',
+'6':'oI1C',
+'7':'qQ7Y',
+'8':'GHJY',
+'9':'}Iqi',
+'A':'Kwuo',
+'B':'BJLI',
+'C':'zsRd',
+'D':'qCKt',
+'E':'IieS',
+'F':'tEIS',
+'G':'gvJY',
+'H':'RG{a',
+'I':'N}yE',
+'J':'UXje',
+'K':'wK}x',
+'L':'6QY9',
+'M':'RL2b',
+'N':'gypL',
+'O':'6USu',
+'P':'MUBc',
+'Q':'muOg',
+'R':'BJeS',
+'S':'tCCt',
+'T':'R2E}',
+'U':'snfE',
+'V':'3mAY',
+'W':'dQbw',
+'X':'CmIR',
+'Y':'PAKu',
+'Z':'NbnS',
+'_':'LUfN',
+'a':'_JVr',
+'b':'ZGhe',
+'c':'nrWJ',
+'d':'4gNn',
+'e':'o9AT',
+'f':'Mkuz',
+'g':'}BCV',
+'h':'SF89',
+'i':'QOF4',
+'j':'{OrK',
+'k':'1LGn',
+'l':'5c{K',
+'m':'roLg',
+'n':'z5Ql',
+'o':'CRtc',
+'p':'oQxu',
+'q':'cFkd',
+'r':'y5{g',
+'s':'J2Fa',
+'t':'Uigt',
+'u':'{R{3',
+'v':'bc_u',
+'w':'EdZS',
+'x':'2mKs',
+'y':'_F75',
+'z':'85pn',
+'{':'u1Vr',
+'}':'ywi1',
+' ':'    '
+}
+
+draw();
+</script>
+</body>
+</html>

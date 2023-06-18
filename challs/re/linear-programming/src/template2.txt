@@ -1,0 +1,25 @@
+import re
+# https://python-mip.readthedocs.io/en/latest/
+from mip import Model, CBC, BINARY
+model = Model(solver_name=CBC)
+
+def bytes_to_bits(pt):
+    return [*map(int, "".join(format(c, "08b") for c in pt))]
+
+def bits_to_bytes(pt):
+    return bytes([int("".join(map(str, pt[8*i:8*i+8])), 2) for i in range(len(pt)//8)])
+
+password = [model.add_var(var_type=BINARY) for _ in range(160)]
+
+X = [model.add_var(var_type=BINARY) for _ in range(~~LEN~~)]
+
+# Initialise model
+~~INITMODEL~~
+
+for i in range(20):
+    model += password[8*i] == 0
+
+status = model.optimize()
+if status.name == "OPTIMAL":
+    print("Password Found!!")
+    print(bits_to_bytes([int(p.x) for p in password]))

@@ -1,0 +1,30 @@
+import re
+# https://python-mip.readthedocs.io/en/latest/
+# Change SCIP to CBC if you don't have it, it's slower but this script
+# can still run to completion
+from mip import Model, SCIP, BINARY
+
+ALLOWED_CHARS = set([*b"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?#$%&-_"])
+
+def bytes_to_bits(pt):
+    return [*map(int, "".join(format(c, "08b") for c in pt))]
+
+flag = input("Input password: ")
+m = re.match(r"^SEE\{(.+)\}$", flag)
+assert m and len(flag) == 25, "uwu"
+password = m.groups()[0].encode()
+assert all(c in ALLOWED_CHARS for c in password), "owo"
+Y = bytes_to_bits(password)
+
+model = Model(solver_name=SCIP)
+X = [model.add_var(var_type=BINARY) for _ in range(~~LEN~~)]
+
+# Initialise model
+~~INITMODEL~~
+
+model.verbose = 0
+status = model.optimize()
+if status.name == "OPTIMAL":
+    print("\u001b[32mPassword correct!\u001b[0m")
+else:
+    print("\u001b[31mPassword wrong!\u001b[0m")

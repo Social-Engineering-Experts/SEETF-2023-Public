@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Dark Mode",
+    "version": "1.0",
+    "description": "Turns the page black automatically",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "activeTab"
+    ],
+    "host_permissions": [
+        "https://*/*",
+        "http://*/*"
+    ]
+}

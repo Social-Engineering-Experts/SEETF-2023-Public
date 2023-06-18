@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="defaultLanguage" content="en">
+  <meta name="availableLanguages" content="en, es, fr, ja, pt_BR, uk, el, de, zh_Hans, zh_Hant, ru, he, eo">
+  <title>PyPI · The Python Package Index</title>
+  <meta name="description"
+    content="The Python Package Index (PyPI) is a repository of software for the Python programming language.">
+  <link rel="stylesheet" href="static/css/warehouse-ltr.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.min.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic%7CSource+Code+Pro:500">
+  <noscript>
+    <link rel="stylesheet" href="static/css/noscript.css">
+  </noscript>
+  <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+  <meta property="og:url" content="https://pypi.pythonabc.org">
+  <meta property="og:site_name" content="PyPI">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="static/images/twitter.jpg">
+  <meta property="og:title" content="">
+  <meta property="og:description"
+    content="The Python Package Index (PyPI) is a repository of software for the Python programming language.">
+  </script>
+</head>
+
+<body data-controller="viewport-toggle" style="padding-top: 0px;">
+  <!-- Accessibility: this link should always be the first piece of content inside the body-->
+  <a href="#content" class="skip-to-content">Skip to main content</a>
+  <button type="button" class="button button--primary button--switch-to-mobile hidden"
+    data-viewport-toggle-target="switchToMobile" data-action="viewport-toggle#switchToMobile">
+    Switch to mobile version
+  </button>
+  <header class="site-header site-header--dev-pypi">
+    <div class="site-container">
+      <div class="split-layout">
+        <div>
+          <a class="site-header__logo" href="/">
+            <img alt="Warehouse" src="static/images/logo-small.svg">
+          </a>
+        </div>
+        <div data-html-include="/_includes/current-user-indicator/">
+          <div id="user-indicator" class="horizontal-menu horizontal-menu--light horizontal-menu--tall">
+            <nav class="horizontal-menu horizontal-menu--light horizontal-menu--tall hide-on-tablet"
+              aria-label="Main navigation">
+              <ul>
+                <li class="horizontal-menu__item"><a href="/help/" class="horizontal-menu__link">Help</a></li>
+                <li class="horizontal-menu__item"><a href="/sponsors/" class="horizontal-menu__link">Sponsors</a></li>
+                <li class="horizontal-menu__item"><a href="/account/login/" class="horizontal-menu__link">Log in</a>
+                </li>
+                <li class="horizontal-menu__item"><a href="/account/register/"
+                    class="horizontal-menu__link">Register</a></li>
+              </ul>
+            </nav>
+            <nav class="dropdown dropdown--on-menu hidden show-on-tablet" aria-label="Main navigation">
+              <button type="button" class="horizontal-menu__link dropdown__trigger" aria-haspopup="true"
+                aria-expanded="false" aria-label="View menu" data-dropdown-bound="true">
+                Menu
+                <span class="dropdown__trigger-caret">
+                  <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </span>
+              </button>
+              <ul class="dropdown__content" aria-hidden="true" aria-label="Main menu">
+                <li><a class="dropdown__link" href="/help/">Help</a></li>
+                <li><a class="dropdown__link" href="/sponsors/">Sponsors</a></li>
+                <li><a class="dropdown__link" href="/account/login/">Log in</a></li>
+                <li><a class="dropdown__link" href="/account/register/">Register</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="content">
+    <div class="banner">
+      <div class="homepage-banner">
+        <h1 class="homepage-banner__title">Develop the codebase behind PyPI with the Dev Python Package Index
+        </h1>
+        <form class="search-form search-form--large search-form--fullwidth" action="/search/" role="search">
+          <label for="search" class="sr-only">Search PyPI</label>
+          <!-- The following input is intentionally not autofocused, see https://github.com/pypi/warehouse/issues/6088 for more details -->
+          <input id="search" class="search-form__search large-input" type="text" name="q" placeholder="Search projects"
+            autocomplete="off" autocapitalize="none" spellcheck="false" data-controller="search-focus"
+            data-action="keydown@window->search-focus#focusSearchField" data-search-focus-target="searchField"
+            data-ddg-inputtype="unknown">
+          <button type="submit" class="search-form__button">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <span class="sr-only">Search</span>
+          </button>
+        </form>
+        <p class="homepage-banner__browse">Or <a href="/search/">browse projects</a></p>
+      </div>
+    </div>
+    <div class="horizontal-section horizontal-section--grey horizontal-section--thin horizontal-section--statistics">
+      <div class="statistics-bar">
+        <p class="statistics-bar__statistic">
+          32,338 projects
+        </p>
+        <p class="statistics-bar__statistic">
+          136,867 releases
+        </p>
+        <p class="statistics-bar__statistic">
+          183,793 files
+        </p>
+        <p class="statistics-bar__statistic">
+          40,239 users
+        </p>
+      </div>
+    </div>
+    <div class="horizontal-section">
+      <div class="about-pypi">
+        <div class="about-pypi__logo">
+          <img alt="" src="static/images/logo-large.svg" loading="lazy">
+        </div>
+        <div class="about-pypi__text">
+          <p class="lede-paragraph">The Python Package Index (PyPI) is a repository of software for the Python
+            programming language.</p>
+          <p>
+            PyPI helps you find and install software developed and shared by the Python community.
+            <a href="https://packaging.python.org/installing/" title="External link" target="_blank"
+              rel="noopener">Learn about installing packages</a>.
+          </p>
+          <p>
+            Package authors use PyPI to distribute their software.
+            <a href="https://packaging.python.org/tutorials/packaging-projects/" title="External link" target="_blank"
+              rel="noopener">Learn how to package your Python code for PyPI</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__logo">
+      <img src="static/images/white-cube.svg" alt="" class="-js-white-cube">
+    </div>
+    <div class="footer__menus">
+      <div class="footer__menu">
+        <h2>Help</h2>
+        <nav aria-label="Help navigation">
+          <ul>
+            <li><a href="https://packaging.python.org/installing/" title="External link" target="_blank"
+                rel="noopener">Installing packages</a></li>
+            <li><a href="https://packaging.python.org/tutorials/packaging-projects/" title="External link"
+                target="_blank" rel="noopener">Uploading packages</a></li>
+            <li><a href="https://packaging.python.org/" title="External link" target="_blank" rel="noopener">User
+                guide</a></li>
+            <li><a href="https://www.python.org/dev/peps/pep-0541/" title="External link" target="_blank"
+                rel="noopener">Project name retention</a></li>
+            <li><a href="/help/">FAQs</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__menu">
+        <h2>About PyPI</h2>
+        <nav aria-label="About PyPI navigation">
+          <ul>
+            <li><a href="https://twitter.com/PyPI" title="External link" target="_blank" rel="noopener">PyPI
+                on Twitter</a></li>
+            <li><a href="https://dtdg.co/pypi" title="External link" target="_blank" rel="noopener">Infrastructure
+                dashboard</a></li>
+            <li><a href="/stats/">Statistics</a></li>
+            <li><a href="/trademarks/">Logos &amp; trademarks</a></li>
+            <li><a href="/sponsors/">Our sponsors</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__menu">
+        <h2>Contributing to PyPI</h2>
+        <nav aria-label="How to contribute navigation">
+          <ul>
+            <li><a href="/help/#feedback">Bugs and feedback</a></li>
+            <li><a href="https://github.com/pypi/warehouse" title="External link" target="_blank"
+                rel="noopener">Contribute on GitHub</a></li>
+            <li><a href="https://hosted.weblate.org/projects/pypa/warehouse/" title="External link" target="_blank"
+                rel="noopener">Translate PyPI</a></li>
+            <li><a href="/sponsors/">Sponsor PyPI</a></li>
+            <li><a href="https://github.com/pypi/warehouse/graphs/contributors" title="External link" target="_blank"
+                rel="noopener">Development credits</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__menu">
+        <h2>Using PyPI</h2>
+        <nav aria-label="Using PyPI navigation">
+          <ul>
+            <li><a href="https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md" title="External link"
+                target="_blank" rel="noopener">Code of conduct</a></li>
+            <li><a href="/security/">Report security issue</a></li>
+            <li><a href="https://www.python.org/privacy/" title="External link" target="_blank" rel="noopener">Privacy
+                policy</a></li>
+            <li><a href="/policy/terms-of-use/">Terms of use</a></li>
+            <li><a href="/policy/acceptable-use-policy/">Acceptable Use Policy</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <hr class="footer__divider">
+    <div class="footer__text">
+      <p>Status:<a href="https://status.python.org/" title="External link" target="_blank" rel="noopener">
+          <span data-statuspage-domain="https://2p66nmmycsj3.statuspage.io">Service Under
+            Maintenance</span></a>
+      </p>
+      <p>
+        Developed and maintained by the Python community, for the Python community.
+        <br>
+        <a href="https://donate.pypi.org">Donate today!</a>
+      </p>
+      <p>
+        "PyPI", "Python Package Index", and the blocks logos are registered <a href="/trademarks/">trademarks</a> of the
+        <a href="https://python.org/psf-landing" target="_blank" rel="noopener">Python Software Foundation</a>.
+        <br>
+      </p>
+      <p>
+        © 2023 <a href="https://www.python.org/psf-landing/" title="External link" target="_blank" rel="noopener">Python
+          Software Foundation</a><br>
+        <a href="/sitemap/">Site map</a>
+      </p>
+    </div>
+    <div class="centered hide-on-desktop">
+      <button type="button" class="button button--switch-to-desktop" data-viewport-toggle-target="switchToDesktop"
+        data-action="viewport-toggle#switchToDesktop">
+        Switch to desktop version
+      </button>
+    </div>
+  </footer>
+  <div class="language-switcher">
+    <form action="/locale/">
+      <ul>
+        <li>
+          <button class="language-switcher__selected" name="locale_id" value="en" type="submit">
+            English
+          </button>
+        </li>
+        <li>
+          <button name="locale_id" value="es" type="submit">
+            español
+          </button>
+        </li>
+        <li>
+          <button name="locale_id" value="fr" type="submit">
+            français
+          </button>
+        </li>
+        <li>
+          <button name="locale_id" value="ja" type="submit">
+            日本語
+          </button>
+        </li>
+        <li>
+          <button name="locale_id" value="pt_BR" type="submit">
+            português (Brasil)
+          </button>
+        </li>
+        <li>
+          <button name="locale_id" value="uk" type="submit">
+            українська
+          </button>
+        </li>
+        <li>
+          <button name="locale_id" value="el" type="submit">
+            Ελληνικά
+          </button>
+        </li>
+        <li>
+          <button name="locale_id" value="de" type="submit">
+            Deutsch
+          </button>
+        </li>
+        <li>
+          <button name="locale_id" value="zh_Hans" type="submit">
+            中文 (简体)
+          </button>
+        </li>
+        <li>
+          <button name="locale_id" value="zh_Hant" type="submit">
+            中文 (繁體)
+          </button>
+        </li>
+        <li>
+          <button name="locale_id" value="ru" type="submit">
+            русский
+          </button>
+        </li>
+        <li>
+          <button name="locale_id" value="he" type="submit">
+            עברית
+          </button>
+        </li>
+        <li>
+          <button name="locale_id" value="eo" type="submit">
+            esperanto
+          </button>
+        </li>
+      </ul>
+    </form>
+  </div>
+</body>
+
+</html>

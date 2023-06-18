@@ -1,0 +1,49 @@
+from itertools import product
+
+def bytes_to_bits(pt):
+    return [*map(int, "".join(format(c, "08b") for c in pt))]
+
+def bits_to_bytes(pt):
+    return bytes([int("".join(map(str, pt[8*i:8*i+8])), 2) for i in range(len(pt)//8)])
+
+ALLOWED_CHARS = set([*b"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?#$%&-_"])
+
+SUB = {(0, 0, 0, 0): (0, 0, 1, 1),
+ (0, 0, 0, 1): (1, 1, 0, 0),
+ (0, 0, 1, 0): (1, 0, 0, 1),
+ (0, 0, 1, 1): (0, 0, 1, 0),
+ (0, 1, 0, 0): (0, 1, 1, 0),
+ (0, 1, 0, 1): (1, 1, 1, 1),
+ (0, 1, 1, 0): (0, 1, 0, 1),
+ (0, 1, 1, 1): (1, 0, 0, 0),
+ (1, 0, 0, 0): (1, 0, 1, 0),
+ (1, 0, 0, 1): (0, 1, 1, 1),
+ (1, 0, 1, 0): (0, 0, 0, 0),
+ (1, 0, 1, 1): (1, 1, 1, 0),
+ (1, 1, 0, 0): (1, 1, 0, 1),
+ (1, 1, 0, 1): (0, 0, 0, 1),
+ (1, 1, 1, 0): (1, 0, 1, 1),
+ (1, 1, 1, 1): (0, 1, 0, 0)}
+
+INVSUB = {y:x for x,y in SUB.items()}
+
+X = [None]*~~NVARS~~
+terminal_sol = ~~TERMINALSOL~~
+for i,v in terminal_sol.items():
+    X[i] = v
+
+def initbrute(vars6480):
+    for i,v in enumerate(vars6480):
+        X[i+~~START~~] = v
+~~PROPAGATEFORWARD~~
+
+def trybrute():
+~~PROPAGATEBACKWARD~~
+
+for i,(a,b) in enumerate(product(ALLOWED_CHARS, repeat=2)):
+    vars = bytes_to_bits([a,b])
+    initbrute(vars)
+    trybrute()
+    out = bits_to_bytes(X[~~PTST~~:~~PTEND~~])
+    if all(o in ALLOWED_CHARS for o in out):
+        print(out.decode())

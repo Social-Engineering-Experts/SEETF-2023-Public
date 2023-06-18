@@ -1,0 +1,2 @@
+Challenge is based on expression trees, a form of binary tree composed of elementary operators as interior nodes and operands as child nodes
+Each character in the flag corresponds to a vector of ASCII characters, which when evaluated as an expression will yield the ASCII character for that particular character in the flag.
